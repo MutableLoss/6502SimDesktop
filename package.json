@@ -6,23 +6,15 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "electron ./main",
-    "start": "electron ./main.prod"
+    "start": "electron ./main.prod",
+    "build": ""
   },
   "author": "DBrown",
   "license": "ISC",
   "dependencies": {
-    "babel-core": "^6.23.1",
-    "babel-polyfill": "^6.23.0",
-    "babel-preset-es2015": "^6.22.0",
-    "babel-preset-es2017": "^6.22.0",
-    "babel-preset-stage-0": "^6.22.0",
-    "babel-register": "^6.23.0",
-    "cross-env": "^3.2.3",
     "electron": "^1.6.2",
     "electron-debug": "^1.1.0",
     "electron-devtools-installer": "^2.1.0",
-    "electron-prebuilt": "^1.4.13",
-    "jquery": "^3.1.1",
-    "webpack": "^2.2.1"
+    "electron-prebuilt": "^1.4.13"
   }
 }
