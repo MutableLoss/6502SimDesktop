@@ -7,7 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "electron ./main",
     "start": "electron ./main.prod",
-    "build": ""
+    "build-main": "cross-env NODE_ENV=production node -r babel-register ./node_modules/webpack/bin/webpack --config webpack.config.electron.js --progress --profile --colors",
+    "build-renderer": "cross-env NODE_ENV=production node -r babel-register ./node_modules/webpack/bin/webpack --config webpack.config.production.js --progress --profile --colors",
+    "build": "npm run build-main && npm run build-renderer"
   },
   "author": "DBrown",
   "license": "ISC",
@@ -16,5 +18,16 @@
     "electron-debug": "^1.1.0",
     "electron-devtools-installer": "^2.1.0",
     "electron-prebuilt": "^1.4.13"
+  },
+  "devDependencies": {
+    "babel-core": "^6.23.1",
+    "babel-loader": "^6.4.0",
+    "babel-polyfill": "^6.23.0",
+    "babili-webpack-plugin": "^0.0.11",
+    "css-loader": "^0.27.1",
+    "file-loader": "^0.10.1",
+    "webpack": "^2.2.1",
+    "webpack-merge": "^4.0.0",
+    "webpack-validator": "^2.3.0"
   }
 }
