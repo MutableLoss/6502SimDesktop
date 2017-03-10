@@ -10,12 +10,12 @@ make it a great desktop app in the near future.
 
 ## Usage
 
-_At this time there are not any static builds (yet). You will find builds here in the future._
+_At this time there are not any static builds (yet). You will find future builds here in the future._
 
 First things first, clone the repository! 
 
-yarn install (or npm install)
-npm start
+*yarn install* (or npm install)
+*npm start*
 
 ## ToDo List
 
