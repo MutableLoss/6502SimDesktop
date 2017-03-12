@@ -1,15 +1,14 @@
 {
-  "name": "65802sim.desktop",
-  "version": "0.1.0",
+  "name": "6502desktop",
+  "version": "0.1.2",
   "description": "Desktop version of 6502 Simulator",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "electron ./main",
-    "start": "electron ./main.prod",
-    "build-main": "cross-env NODE_ENV=production node -r babel-register ./node_modules/webpack/bin/webpack --config webpack.config.electron.js --progress --profile --colors",
-    "build-renderer": "cross-env NODE_ENV=production node -r babel-register ./node_modules/webpack/bin/webpack --config webpack.config.production.js --progress --profile --colors",
-    "build": "npm run build-main && npm run build-renderer"
+    "start": "electron .",
+    "pack-mac": "electron-packager . 6502Desktop --asar.unpack=protocol-link.html --overwrite --platform=darwin --arch=x64 --icon=assets/mac/app.icns --out=out --osx-sign.identity='Developer ID Application: 3DEsprit' --appBundleId='6502Desktop' appCategoryType=public.app-category.education",
+    "pack-win": "electron-packager . --asar.unpack=protocol-link.html --overwrite --platform=win32 --arch=ia32 --icon=assets/win/app.ico --out=out --version-string.CompanyName='3DEsprit' --version-string.FileDescription='6502 Simulator Desktop' --version-string.ProductName='6502 Simulator Desktop'",
+    "pack-linux": "electron-packager . --asar.unpack=protocol-link.html --overwrite --platform=linux --arch=x64 --out=out"
   },
   "author": "DBrown",
   "license": "ISC",
@@ -17,6 +16,7 @@
     "electron": "^1.6.2",
     "electron-debug": "^1.1.0",
     "electron-devtools-installer": "^2.1.0",
+    "electron-packager": "^8.5.2",
     "electron-prebuilt": "^1.4.13"
   },
   "devDependencies": {
