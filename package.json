@@ -15,19 +15,7 @@
   "dependencies": {
     "electron": "^1.6.2",
     "electron-debug": "^1.1.0",
-    "electron-devtools-installer": "^2.1.0",
-    "electron-packager": "^8.5.2",
     "electron-prebuilt": "^1.4.13"
   },
-  "devDependencies": {
-    "babel-core": "^6.23.1",
-    "babel-loader": "^6.4.0",
-    "babel-polyfill": "^6.23.0",
-    "babili-webpack-plugin": "^0.0.11",
-    "css-loader": "^0.27.1",
-    "file-loader": "^0.10.1",
-    "webpack": "^2.2.1",
-    "webpack-merge": "^4.0.0",
-    "webpack-validator": "^2.3.0"
-  }
+  "devDependencies": {}
 }
