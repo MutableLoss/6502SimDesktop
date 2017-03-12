@@ -30,7 +30,8 @@
   margin: 0 0 6px 0;
   padding: 6px;
   border: 1px solid black;
-  width: 420px;
+  max-width: 420px;
+  min-width: 200px;
   height: 290px;
   font-family: monospace;
   overflow: auto;
