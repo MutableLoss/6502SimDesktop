@@ -5,8 +5,6 @@
     <title>Easy 6502 Desktop Simulator</title>
   </head>
   <body>
-
-    <div class="banner"></div>
     <div class="widget">
       <div class="buttons">
         <input type="button" value="Assemble" class="assembleButton" />
@@ -17,7 +15,14 @@
         <input type="button" value="Notes" class="notesButton" />
       </div>
 
-      <textarea class="code"></textarea>
+      <textarea class="code">
+LDA #$01
+STA $0200
+LDA #$05
+STA $0201
+LDA #$08
+STA $0202
+      </textarea>
 
       <canvas class="screen" width="160" height="160"></canvas>
       
@@ -42,6 +47,7 @@
       </div>
       <div class="monitor"><pre><code></code></pre></div>
       <div class="messages"><pre><code></code></pre></div>
+      <div class="banner"></div>
 
       <div class="notes" style="display: none">Notes:
 
