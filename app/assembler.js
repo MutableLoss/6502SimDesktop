@@ -8,6 +8,7 @@
  *  Released under the GNU General Public License
  *  see http://gnu.org/licenses/gpl.html
  */
+/* eslint no-use-before-define: 0 */  // --> OFF
 
 'use strict';
 
@@ -2435,24 +2436,21 @@ function SimulatorWidget(node) {
       pushByte((value >> 8) & 0xff);
     }
 
-    function openPopup(content, title) {
-      var w = window.open('', title, 'width=500,height=300,resizable=yes,scrollbars=yes,toolbar=no,location=no,menubar=no,status=no');
-
-      var html = "<html><head>";
-      html += "<link href='style.css' rel='stylesheet' type='text/css' />";
-      html += "<title>" + title + "</title></head><body>";
-      html += "<pre><code>";
-
-      html += content;
-
-      html += "</code></pre></body></html>";
-      w.document.write(html);
-      w.document.close();
+    function openDiv(content, title) {
+      var w = document.querySelector('.banner');
+      var ele = document.createElement('div');
+      // var html = "<link href='style.css' rel='stylesheet' type='text/css' />";
+      // html += "<title>" + title + "</title></head><body>";
+      // html += "<pre><code>";
+      // html += content;
+      // html += "</code></pre></body></html>";
+      ele.innerHTML = '<code>' + content + '</code>';
+      w.appendChild(ele);
     }
 
     // Dump binary as hex to new window
     function hexdump() {
-      openPopup(memory.format(0x600, codeLen), 'Hexdump');
+      openDiv(memory.format(0x600, codeLen), 'Hexdump');
     }
 
     // TODO: Create separate disassembler object?
@@ -2616,7 +2614,7 @@ function SimulatorWidget(node) {
       var html = 'Address  Hexdump   Dissassembly\n';
       html +=    '-------------------------------\n';
       html += instructions.join('\n');
-      openPopup(html, 'Disassembly');
+      openDiv(html, 'Disassembly');
     }
 
     return {
