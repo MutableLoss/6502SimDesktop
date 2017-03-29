@@ -46,10 +46,6 @@ rules:
   no-void: 2
   no-with: 2
 
-  # Strict Mode
-  # http://eslint.org/docs/rules/#strict-mode
-  strict: [2, global]
-
   # Variables
   # http://eslint.org/docs/rules/#variables
   no-delete-var: 2
@@ -90,7 +86,6 @@ rules:
                   MemberExpression: 1,
                   SwitchCase: 1}]
   key-spacing: [2, {mode: minimum}]
-  keyword-spacing: 2
   linebreak-style: [2, unix]
   max-len: [2, {ignoreUrls: true, tabWidth: 2}]
   new-parens: 2
@@ -101,7 +96,6 @@ rules:
   one-var-declaration-per-line: 2
   operator-linebreak: [2, after]
   quotes: [2, single, avoid-escape]
-  semi: 2
   semi-spacing: 2
   space-before-blocks: [2, always]
   space-in-parens: [2, never]
@@ -123,9 +117,6 @@ rules:
   prefer-const: [2, {ignoreReadBeforeAssign: true}]
   rest-spread-spacing: 2
   template-curly-spacing: 2
-
-  # Custom rules in tools/eslint-rules
-  align-multiline-assignment: 2
 
 # Global scoped method and vars
 globals:
