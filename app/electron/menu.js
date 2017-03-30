@@ -7,7 +7,7 @@ const OSXtemplate = [
       { label: 'About 6502Desktop', selector: 'orderFrontStandardAboutPanel:' },
       { label: 'Quit', accelerator: 'Command+Q', click: function () { app.quit(); } }
     ]
-  }, 
+  },
   {
     label: 'Edit',
     submenu: [
@@ -22,11 +22,11 @@ const OSXtemplate = [
   {
     label: 'View',
     submenu: (process.env.NODE_ENV === 'development') ? [
-      { label: '&Reload', accelerator: 'Ctrl+R', 
-        click() { mainWindow.webContents.reload(); } }, 
+      { label: '&Reload', accelerator: 'Ctrl+R',
+        click() { mainWindow.webContents.reload(); } },
       { label: 'Toggle &Full Screen', accelerator: 'F11',
         click() { mainWindow.setFullScreen(!mainWindow.isFullScreen()); }
-      }, 
+      },
       { label: 'Toggle &Developer Tools', accelerator: 'Alt+Ctrl+I',
         click() { mainWindow.toggleDevTools(); } }
     ] : [
