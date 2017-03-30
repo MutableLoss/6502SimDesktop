@@ -1,4 +1,5 @@
 const { app } = require('electron')
+
 const OSXtemplate = [
   {
     label: 'Application',
@@ -32,7 +33,13 @@ const OSXtemplate = [
       { label: 'Toggle &Full Screen', accelerator: 'F11',
         click() { mainWindow.setFullScreen(!mainWindow.isFullScreen()); } }
     ]
-  }
+  },
+  {
+    label: 'Help',
+    submenu: [
+      { label: 'Easy 6502 Tutorial', click: function () { require('electron').shell.openExternal('http://electron.atom.io'); } }
+    ]
+  },
 ]
 
 const PCtemplate = [
@@ -57,6 +64,7 @@ const PCtemplate = [
     label: 'Help',
     submenu: [
       { label: 'About 6502Desktop', selector: 'orderFrontStandardAboutPanel:' },
+      { label: 'Easy 6502 Tutorial', click: function () { electronOpenLinkInBrowser('http://example.com'); } }
     ]
   },
 ]
