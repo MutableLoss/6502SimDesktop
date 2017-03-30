@@ -35,8 +35,9 @@ function SimulatorWidget(node) {
     $node.find('.resetButton').click(simulator.reset);
     $node.find('.hexdumpButton').click(assembler.hexdump);
     $node.find('.disassembleButton').click(assembler.disassemble);
-    $node.find('.debug').change(function () {
-      var debug = $(this).is(':checked');
+    $node.find('.debug').on('click', function () {
+      $(this).toggleClass('active');
+      var debug = $(this).hasClass('active');
       if (debug) {
         ui.debugOn();
         simulator.enableDebugger();
@@ -45,7 +46,11 @@ function SimulatorWidget(node) {
         simulator.stopDebugger();
       }
     });
-    $node.find('.monitoring').change(function () {
+    $node.find('.monitoring').on('click', function () {
+      $(this).toggleClass('active');
+      if($(this).hasClass('active')) {
+        
+      }
       ui.toggleMonitor();
       simulator.toggleMonitor();
     });
@@ -156,7 +161,7 @@ function SimulatorWidget(node) {
     }
 
     function toggleMonitor() {
-      $node.find('.monitor').toggle();
+      $node.find('.monitor-container').toggle();
     }
 
     function showNotes() {
@@ -1633,10 +1638,8 @@ function SimulatorWidget(node) {
     }
 
     function updateDebugInfo() {
-      var html = "A=$" + num2hex(regA) + " X=$" + num2hex(regX) + " Y=$" + num2hex(regY) + "<br />";
-      html += "SP=$" + num2hex(regSP) + " PC=$" + addr2hex(regPC);
-      html += "<br />";
-      html += "NV-BDIZC<br />";
+      var html = "A=$" + num2hex(regA) + " X=$" + num2hex(regX) + " Y=$" + num2hex(regY) + 
+        " SP=$" + num2hex(regSP) + " PC=$" + addr2hex(regPC) + " NV-BDIZC: ";
       for (var i = 7; i >=0; i--) {
         html += regP >> i & 1;
       }
