@@ -6,13 +6,24 @@
   </head>
   <body>
     <div class="widget">
-      <div class="buttons">
-        <input type="button" value="Assemble" class="assembleButton" />
-        <input type="button" value="Run" class="runButton" />
-        <input type="button" value="Reset" class="resetButton" />
-        <input type="button" value="Hexdump" class="hexdumpButton" />
-        <input type="button" value="Disassemble" class="disassembleButton" />
-        <input type="button" value="Notes" class="notesButton" />
+      <div class="button-container">
+        <div class="buttons">
+          <input type="button" value="Assemble" class="assembleButton" />
+          <input type="button" value="Run" class="runButton" />
+          <input type="button" value="Reset" class="resetButton" />
+          <input type="button" value="Hexdump" class="hexdumpButton" />
+          <input type="button" value="Disassemble" class="disassembleButton" />
+          <input type="button" value="Notes" class="notesButton" />
+        </div>
+        <div class="buttons-right">
+          <input type="button" value="Debug" class="debug" name="debug" />
+          <input type="button" value="Step" class="stepButton" />
+          <input type="button" value="Jump to ..." class="gotoButton" />
+        </div>
+      </div>
+
+      <div class="debugger">
+        <div class="minidebugger"></div>
       </div>
 
       <textarea class="code">
@@ -26,26 +37,18 @@ STA $0202
 
       <canvas class="screen" width="160" height="160"></canvas>
       
-      <div class="debugger">
-        <input type="checkbox" class="debug" name="debug" />
-        <label for="debug">Debugger</label>
-        <div class="minidebugger"></div>
-        <div class="buttons">
-          <input type="button" value="Step" class="stepButton" />
-          <input type="button" value="Jump to ..." class="gotoButton" />
-        </div>
-      </div>
-
       <div class="monitorControls">
-        <label for="monitoring">Monitor</label>
-        <input type="checkbox" class="monitoring" name="monitoring" />
-
-        <label for="start">Start: $</label>
-        <input type="text" value="0" class="start" name="start" />
-        <label for="length">Length: $</label>
-        <input type="text" value="ff" class="length" name="length" />
+        <input type="button" class="monitoring" value="Monitor" name="monitoring" />
       </div>
-      <div class="monitor"><pre><code></code></pre></div>
+      <div class="monitor-container">
+        <div class="monitor-range">
+          <label class="left" for="start">Start: $</label>
+          <input class="left" type="text" value="0" size="5" maxlength="5" class="start" name="start" />
+          <label class="left" for="length">Length: $</label>
+          <input class="left" type="text" value="ff" size="5" maxlength="5" class="length" name="length" />
+        </div>
+        <div class="monitor"><pre><code></code></pre></div>
+      </div>
       <div class="messages"><pre><code></code></pre></div>
       <div class="banner"></div>
 
