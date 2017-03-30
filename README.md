@@ -7,7 +7,7 @@ What would make it even easier is having your own Desktop 6502 Simulator to use.
 I went ahead and did exactly that. While I am not finished it is usable, and I plan to do whatever I can to 
 make it a great desktop app in the near future.
 
-![Alt text](/assets/6502Desktop_SS.png "6502Desktop on OSX")
+![6502 Desktop Simulator](/assets/6502Desktop_SS.png "6502Desktop on OSX")
 
 
 # Getting Started
@@ -15,7 +15,7 @@ make it a great desktop app in the near future.
 
 ## Binary Downloads
 
-![OSX Build 0.3.7](https://github.com/3DEsprit/6502SimDesktop/releases/download/0.3.7/6502Desktop-OSX_0.3.7.zip "OSX Build 0.3.7")
+[OSX Build 0.3.7](https://github.com/3DEsprit/6502SimDesktop/releases/download/0.3.7/6502Desktop-OSX_0.3.7.zip)
 
 
 ## Install Manually
@@ -24,11 +24,11 @@ _If there is not a build for your OS or if you would like to compile from source
 
 First things first, clone the repository by downloading with the Green Download button above, or cloning on your system.
 
+`git clone https://github.com/3DEsprit/6502SimDesktop.git`  
 
-*git clone https://github.com/3DEsprit/6502SimDesktop.git*
-If you have Yarn installed: *yarn install* 
-Or without Yarn: *npm install*
-*npm start*
+`yarn install` (or `npm install` without [Yarn](https://github.com/yarnpkg/yarn))  
+
+`npm start`  
 
 Have fun!
 
@@ -42,6 +42,7 @@ Have fun!
 * Create Snazzy Icon (In process)
 * Test on Windows/Linux
 * Build Packages for Win/Linux Platforms
+* ~~Reactive CSS with the window size~~
 * Make the the sim integration more desktop-ish *In Progress*.
 * Various Colored Themes
 * Look at options to offer on Mac App Store, and Windows App Store
