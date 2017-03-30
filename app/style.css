@@ -1,3 +1,7 @@
+html {
+  box-sizing: border-box;
+}
+
 .widget {
   width: 600px;
   margin: 15px auto;
@@ -11,8 +15,32 @@
   font-style: bold;
 }
 
+.button-container {
+  text-align: center;
+}
+
 .buttons {
+  display: inline-block;
   margin: 8px 0;
+  margin-right: 20px;
+  outline: none;
+}
+
+.buttons-right {
+  display: inline;
+  margin: 8px 0;
+  margin-left: 20px;
+  outline: none;
+}
+
+.active {
+  color: #fff;
+  background-color: #3272cc;
+  outline: none;
+  padding: 2px 8px 3px;
+  border-radius:5px;
+  -moz-border-radius:5px; 
+  -webkit-border-radius:5px; border:none;
 }
 
 .start, .length {
@@ -30,11 +58,14 @@
   margin: 0 0 6px 0;
   padding: 6px;
   border: 1px solid black;
-  width: 420px;
-  height: 290px;
+  max-width: 420px;
+  min-width: 200px;
+  height: 200px;
   font-family: monospace;
-  overflow: auto;
+  overflow-y: scroll;
+  overflow-x: auto;
   float: left;
+  /* disable size handle */
 }
 
 .screen {
@@ -42,22 +73,26 @@
 }
 
 .debugger {
-  border: 1px black solid;
+  display: inline-block;
   margin-top: 6px;
   padding: 3px;
   padding-top: 8px;
-  height: 125px;
-  width: 152px;
+  height: 40px;
   text-align: center;
-  float: right;
 }
 
 .minidebugger {
   margin: 0;
   margin-top: 6px;
-  padding: 0;
+  margin-left: 10px;
+  padding: 0 10px;
   font-family: monospace;
   font-size: 11px;
+  font-weight: 400;
+}
+
+.left {
+  display: block;
 }
 
 .monitorControls {
@@ -71,15 +106,30 @@
   margin-right: 0.5em;
 }
 
+.monitor-container {
+  text-align: right;
+  display: none;
+  height: 110px;
+}
+
 .monitor {
+  display: inline-block;
   margin: 10px 0;
   padding: 6px;
   border: 1px solid #999;
   background-color: #ddd;
-  width: 587px;
+  width: 80%;
   height: 100px;
   overflow: auto;
-  display: none;
+}
+
+.monitor-range {
+  float: left;
+  display: inline-block;
+  padding: 20px;
+  height: 100px;
+  text-align: left;
+  width: 50px;
 }
 
 .monitor-invalid {
@@ -98,4 +148,12 @@
   text-align: left;
   font-size: 12px;
   color: #444;
+}
+
+@media (min-width: 600) {
+
+}
+
+@media (max-width: 200) {
+
 }

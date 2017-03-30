@@ -8,6 +8,7 @@
  *  Released under the GNU General Public License
  *  see http://gnu.org/licenses/gpl.html
  */
+/* eslint no-use-before-define: 0 */  // --> OFF
 
 'use strict';
 
@@ -34,8 +35,9 @@ function SimulatorWidget(node) {
     $node.find('.resetButton').click(simulator.reset);
     $node.find('.hexdumpButton').click(assembler.hexdump);
     $node.find('.disassembleButton').click(assembler.disassemble);
-    $node.find('.debug').change(function () {
-      var debug = $(this).is(':checked');
+    $node.find('.debug').on('click', function () {
+      $(this).toggleClass('active');
+      var debug = $(this).hasClass('active');
       if (debug) {
         ui.debugOn();
         simulator.enableDebugger();
@@ -44,7 +46,11 @@ function SimulatorWidget(node) {
         simulator.stopDebugger();
       }
     });
-    $node.find('.monitoring').change(function () {
+    $node.find('.monitoring').on('click', function () {
+      $(this).toggleClass('active');
+      if($(this).hasClass('active')) {
+        
+      }
       ui.toggleMonitor();
       simulator.toggleMonitor();
     });
@@ -155,7 +161,7 @@ function SimulatorWidget(node) {
     }
 
     function toggleMonitor() {
-      $node.find('.monitor').toggle();
+      $node.find('.monitor-container').toggle();
     }
 
     function showNotes() {
@@ -1632,10 +1638,8 @@ function SimulatorWidget(node) {
     }
 
     function updateDebugInfo() {
-      var html = "A=$" + num2hex(regA) + " X=$" + num2hex(regX) + " Y=$" + num2hex(regY) + "<br />";
-      html += "SP=$" + num2hex(regSP) + " PC=$" + addr2hex(regPC);
-      html += "<br />";
-      html += "NV-BDIZC<br />";
+      var html = "A=$" + num2hex(regA) + " X=$" + num2hex(regX) + " Y=$" + num2hex(regY) + 
+        " SP=$" + num2hex(regSP) + " PC=$" + addr2hex(regPC) + " NV-BDIZC: ";
       for (var i = 7; i >=0; i--) {
         html += regP >> i & 1;
       }
@@ -2435,24 +2439,21 @@ function SimulatorWidget(node) {
       pushByte((value >> 8) & 0xff);
     }
 
-    function openPopup(content, title) {
-      var w = window.open('', title, 'width=500,height=300,resizable=yes,scrollbars=yes,toolbar=no,location=no,menubar=no,status=no');
-
-      var html = "<html><head>";
-      html += "<link href='style.css' rel='stylesheet' type='text/css' />";
-      html += "<title>" + title + "</title></head><body>";
-      html += "<pre><code>";
-
-      html += content;
-
-      html += "</code></pre></body></html>";
-      w.document.write(html);
-      w.document.close();
+    function openDiv(content, title) {
+      var w = document.querySelector('.banner');
+      var ele = document.createElement('div');
+      // var html = "<link href='style.css' rel='stylesheet' type='text/css' />";
+      // html += "<title>" + title + "</title></head><body>";
+      // html += "<pre><code>";
+      // html += content;
+      // html += "</code></pre></body></html>";
+      ele.innerHTML = '<code>' + content + '</code>';
+      w.appendChild(ele);
     }
 
     // Dump binary as hex to new window
     function hexdump() {
-      openPopup(memory.format(0x600, codeLen), 'Hexdump');
+      openDiv(memory.format(0x600, codeLen), 'Hexdump');
     }
 
     // TODO: Create separate disassembler object?
@@ -2616,7 +2617,7 @@ function SimulatorWidget(node) {
       var html = 'Address  Hexdump   Dissassembly\n';
       html +=    '-------------------------------\n';
       html += instructions.join('\n');
-      openPopup(html, 'Disassembly');
+      openDiv(html, 'Disassembly');
     }
 
     return {

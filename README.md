@@ -19,6 +19,7 @@ First things first, clone the repository!
 
 ## ToDo List
 
+* Fix Hexdump
 * Create Snazzy Icon (In process)
 * Test on Windows/Linux
 * Build Packages for Win/Linux Platforms (Mac build done)

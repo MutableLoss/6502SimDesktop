@@ -14,9 +14,10 @@ function createWindow () {
     protocol: 'file:',
     slashes: true
   }))
+  // mainWindow.webContents.openDevTools()
 
   if(process.platform === 'darwin') {
-    Menu.setApplicationMenu(Menu.buildFromTemplate(OSXtemplate));
+    Menu.setApplicationMenu(Menu.buildFromTemplate(OSXtemplate))
   } else if(process.platform !== 'darwin') {
     BrowserWindow.setMenu(Menu.buildFromTemplate(PCtemplate))
   }
