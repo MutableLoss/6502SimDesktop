@@ -1,6 +1,6 @@
 {
   "name": "6502desktop",
-  "version": "0.3.4",
+  "version": "0.3.5",
   "description": "Desktop version of 6502 Simulator",
   "main": "main.js",
   "scripts": {
