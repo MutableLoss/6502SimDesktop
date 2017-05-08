@@ -19,7 +19,7 @@ function createWindow () {
   if(process.platform === 'darwin') {
     Menu.setApplicationMenu(Menu.buildFromTemplate(OSXtemplate))
   } else if(process.platform !== 'darwin') {
-    BrowserWindow.setMenu(Menu.buildFromTemplate(PCtemplate))
+    mainWindow.setMenu(Menu.buildFromTemplate(PCtemplate))
   }
 
   mainWindow.on('closed', function () {
