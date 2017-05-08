@@ -16,6 +16,8 @@ make it a great desktop app in the near future.
 ## Binary Downloads
 
 [OSX Build 0.3.7](https://github.com/3DEsprit/6502SimDesktop/releases/download/0.3.7/6502Desktop-OSX_0.3.7.zip)
+[Windows Build 0.3.7](https://github.com/3DEsprit/6502SimDesktop/releases/download/0.3.7/6502Desktop-Win_0.3.7.zip)
+[Linux Build 0.3.7](https://github.com/3DEsprit/6502SimDesktop/releases/download/0.3.7/6502Desktop-Linux_0.3.7.zip)
 
 
 ## Install Manually
@@ -40,12 +42,14 @@ Have fun!
 * Update Register/Flag Viewing
 * Addition of UI Animations
 * Create Snazzy Icon (In process)
-* Test on Windows/Linux
+* Test on Linux
 * Build Packages for Win/Linux Platforms
 * ~~Reactive CSS with the window size~~
 * Make the the sim integration more desktop-ish *In Progress*.
 * Various Colored Themes
 * Look at options to offer on Mac App Store, and Windows App Store
+* Switch to Electron-Builder for Builds
+* Change Linux Builds to AppImage
 
 ## License
 
