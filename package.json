@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "electron .",
+    "dev": "NODE_ENV='development' electron .",
     "pack-mac": "electron-packager . 6502Desktop --asar.unpack=protocol-link.html --overwrite --platform=darwin --arch=x64 --icon=assets/mac/app.icns --out=out --osx-sign.identity='Developer ID Application: 3DEsprit' --appBundleId='6502Desktop' appCategoryType=public.app-category.education",
     "pack-win": "electron-packager . 6502Desktop --asar.unpack=protocol-link.html --overwrite --platform=win32 --arch=x64 --icon=assets/win/app.ico --out=out",
     "pack-linux": "electron-packager . 6502Desktop --asar.unpack=protocol-link.html --overwrite --platform=linux --arch=x64 --out=out --prune=true"
