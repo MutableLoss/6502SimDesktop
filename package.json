@@ -14,9 +14,8 @@
   "author": "DBrown",
   "license": "ISC",
   "dependencies": {
-    "electron": "^1.6.2",
-    "electron-debug": "^1.1.0",
-    "electron-prebuilt": "^1.4.13"
+    "electron": "^3.0.0",
+    "electron-debug": "*"
   },
   "devDependencies": {}
 }
